@@ -15,10 +15,10 @@ public class Main{
                 createRandomArray(size);
             }
             else if (selection == 2){
-                secondMethod();
+                //secondMethod();
             }
             else if(selection == 3){
-                thirdMethod();
+                //thirdMethod();
             }
             else if(selection == 0){
                 isContinue = false;
@@ -47,14 +47,15 @@ public class Main{
         input = scan.nextInt();
         return input;
     }  
-    
+
     public static int[] createRandomArray(int size) {
         int[] arr = new int[size];
         System.out.printf("Creating array at size %d\n", size);
         for (int i = 0; i < size; i++) {
             arr[i] = (int)(Math.random() * 101);
-            System.out.println(arr[i] + ", ");
+            System.out.print(arr[i] + ", ");
         }
+        System.out.println();
         return arr;
     }
 }
