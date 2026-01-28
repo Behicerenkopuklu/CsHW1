@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main{
     static Scanner scan = new Scanner(System.in);
@@ -22,7 +23,7 @@ public class Main{
                 System.out.println(findMax(arr));
             }
             else if(selection == 4){
-                //Find diff. from average. Write a method.
+                System.out.println("\ndifferences of average are: " + Arrays.toString(averageDiffArray(randomArr)) + "\n");
             }
             else if(selection == 5){
                 System.out.println("Sum of the odd indexes of the array is: " + getOddSum(arr));
@@ -101,5 +102,25 @@ public class Main{
             }
         }
         return max;
+    }
+
+    //finds the average of an int array.
+    //returns an array that has the differences of each element in the original array to the average.
+    public static  int[] averageDiffArray(int[] arr){
+        int avg = 0;
+        int length = arr.length;
+
+        for (int i = 0; i < arr.length; i++){
+            avg += arr[i];
+        }
+        avg = (int)(avg/length);
+
+        int[] arr2 = new int[arr.length];
+        for (int i = 0; i < arr.length; i++){
+            int element = arr[i] - avg;
+            arr2[i] = element;
+        }
+
+        return arr2;
     }
 }
