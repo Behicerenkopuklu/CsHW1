@@ -8,7 +8,7 @@ public class Main{
         createRandomArray(size);
 
         while(isContinue) {
-            System.out.printf("Please select an operation:\n1) %s\n2) %s\n3) %s\n4) %s\n5) %s\n6) %s\n0) %s","Create a new array", "Find Minimum of array", "Find maximum of array", "Find differances form average", "Sum of odd indexes", "Sum of even indexes", "Exit");
+            System.out.printf("Please select an operation:\n1) %s\n2) %s\n3) %s\n4) %s\n5) %s\n6) %s\n0) %s\n","Create a new array", "Find Minimum of array", "Find maximum of array", "Find differances form average", "Sum of odd indexes", "Sum of even indexes", "Exit");
             int selection = getNumber("Please Enter the number of the operation (0 for exit): ", 0, 6);
             if(selection == 1){
                 size = getNumber("Input an array size: ");
