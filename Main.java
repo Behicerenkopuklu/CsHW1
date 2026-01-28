@@ -23,7 +23,7 @@ public class Main{
                 System.out.println(findMax(arr));
             }
             else if(selection == 4){
-                System.out.println("\ndifferences of average are: " + Arrays.toString(averageDiffArray(randomArr)) + "\n");
+                System.out.println("\ndifferences of average are: " + Arrays.toString(averageDiffArray(arr)) + "\n");
             }
             else if(selection == 5){
                 System.out.println("Sum of the odd indexes of the array is: " + getOddSum(arr));
