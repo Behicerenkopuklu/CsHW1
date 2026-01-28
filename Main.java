@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main{
     static Scanner scan = new Scanner(System.in);
@@ -5,14 +6,14 @@ public class Main{
     public static void main(String[] args) {
 
         int size = getNumber("Input an array size: ");
-        createRandomArray(size);
+        int[] randomArr = createRandomArray(size);
 
         while(isContinue) {
             System.out.printf("Please select an operation:\n1) %s\n2) %s\n3) %s\n4) %s\n5) %s\n6) %s\n0) %s","Create a new array", "Find Minimum of array", "Find maximum of array", "Find differances form average", "Sum of odd indexes", "Sum of even indexes", "Exit");
             int selection = getNumber("Please Enter the number of the operation (0 for exit): ", 0, 6);
             if(selection == 1){
                 size = getNumber("Input an array size: ");
-                createRandomArray(size);
+                randomArr = createRandomArray(size);
             }
             else if (selection == 2){
                 //Will find minimum of the array. Write a method.
@@ -21,7 +22,7 @@ public class Main{
                 //Will find the max of the array. Write a method.
             }
             else if(selection == 4){
-                //Find diff. from average. Write a method.
+                System.out.println("\ndifferences of average are: " + Arrays.toString(averageDiffArray(randomArr)) + "\n");
             }
             else if(selection == 5){
                 //Sum of odd indexes. Write a method.
@@ -66,5 +67,25 @@ public class Main{
         }
         System.out.println();
         return arr;
+    }
+
+    //finds the average of an int array.
+    //returns an array that has the differences of each element in the original array to the average.
+    public static  int[] averageDiffArray(int[] arr){
+        int avg = 0;
+        int length = arr.length;
+
+        for (int i = 0; i < arr.length; i++){
+            avg += arr[i];
+        }
+        avg = (int)(avg/length);
+
+        int[] arr2 = new int[arr.length];
+        for (int i = 0; i < arr.length; i++){
+            int element = arr[i] - avg;
+            arr2[i] = element;
+        }
+
+        return arr2;
     }
 }
