@@ -5,20 +5,21 @@ public class Main{
     public static void main(String[] args) {
 
         int size = getNumber("Input an array size: ");
-        createRandomArray(size);
+        int[] arr = createRandomArray(size);
+        
 
         while(isContinue) {
             System.out.printf("Please select an operation:\n1) %s\n2) %s\n3) %s\n4) %s\n5) %s\n6) %s\n0) %s\n","Create a new array", "Find Minimum of array", "Find maximum of array", "Find differances form average", "Sum of odd indexes", "Sum of even indexes", "Exit");
             int selection = getNumber("Please Enter the number of the operation (0 for exit): ", 0, 6);
             if(selection == 1){
                 size = getNumber("Input an array size: ");
-                createRandomArray(size);
+                arr = createRandomArray(size);
             }
             else if (selection == 2){
-                //Will find minimum of the array. Write a method.
+                System.out.println(findMin(arr));
             }
             else if(selection == 3){
-                //Will find the max of the array. Write a method.
+                System.out.println(findMax(arr));
             }
             else if(selection == 4){
                 //Find diff. from average. Write a method.
@@ -82,5 +83,23 @@ public class Main{
             sum += arr[i];
         }
         return sum;
+    }
+    public static int findMin(int[] arr){
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            if(min > arr[i]){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    public static int findMax(int[] arr){
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }
+        }
+        return max;
     }
 }
