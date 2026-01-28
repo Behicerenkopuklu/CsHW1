@@ -24,10 +24,10 @@ public class Main{
                 //Find diff. from average. Write a method.
             }
             else if(selection == 5){
-                //Sum of odd indexes. Write a method.
+                System.out.println("Sum of the odd indexes of the array is: " + getOddSum(arr));
             }
             else if(selection == 6){
-                //Sum of even indexes. Write a method.
+                System.out.println("Sum of the even indexes of the array is: " + getEvenSum(arr));
             }
             else if(selection == 0){
                 isContinue = false;
@@ -66,5 +66,21 @@ public class Main{
         }
         System.out.println();
         return arr;
+    }
+
+    public static int getOddSum(int[] arr) {
+        int sum = 0;
+        for(int i = 1; i < arr.length; i += 2) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    public static int getEvenSum(int[] arr) {
+        int sum = 0;
+        for(int i = 0; i < arr.length; i += 2) {
+            sum += arr[i];
+        }
+        return sum;
     }
 }
